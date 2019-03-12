@@ -1,0 +1,11 @@
+
+[woost.extensions.googleanalytics.admin.sections]
+
+    [GoogleAnalyticsSection.instance]
+    *: Google Analytics
+
+    [GoogleAnalyticsSettings.instance]
+    ca: Configuració
+    es: Configuración
+    en: Configuration
+
