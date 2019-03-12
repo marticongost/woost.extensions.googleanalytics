@@ -5,7 +5,7 @@
     *: Google Analytics
 
     [GoogleAnalyticsSettings.instance]
-    ca: Configuració
-    es: Configuración
-    en: Configuration
+    ca: Configuració de Google Analytics
+    es: Configuración de Google Analytics
+    en: Google Analytics configuration
 
