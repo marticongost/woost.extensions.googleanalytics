@@ -26,6 +26,11 @@ class GoogleAnalyticsSection(Folder):
 
 class GoogleAnalyticsSettings(Settings):
 
+    icon_uri = (
+        "woost.extensions.googleanalytics.admin.ui://"
+        "images/google-analytics.svg"
+    )
+
     members = [
         "x_googleanalytics_account",
         "x_googleanalytics_domain",
