@@ -3,17 +3,17 @@
 
 .. moduleauthor:: Martí Congost <marti.congost@whads.com>
 """
-from cocktail.translations import translations
 from woost.models import ExtensionAssets, Configuration, Role
 from .customdefinition import CustomDefinition
 from .readreportspermission import ReadReportsPermission
 
-translations.load_bundle("woost.extensions.googleanalytics.installation")
-assets = ExtensionAssets("googleanalytics")
 
 def create_default_custom_definitions():
+
+    assets = ExtensionAssets("googleanalytics")
+
     Configuration.instance.x_googleanalytics_custom_definitions = [
-        assets.new(
+        assets.require(
             CustomDefinition,
             "default_custom_definitions.locale",
             title = assets.TRANSLATIONS,
@@ -22,7 +22,7 @@ def create_default_custom_definitions():
                 "from cocktail.translations import get_language\n"
                 "value = get_language()"
         ),
-        assets.new(
+        assets.require(
             CustomDefinition,
             "default_custom_definitions.roles",
             title = assets.TRANSLATIONS,
@@ -31,7 +31,7 @@ def create_default_custom_definitions():
                 "from woost import app\n"
                 "value = set(app.user.iter_roles())"
         ),
-        assets.new(
+        assets.require(
             CustomDefinition,
             "default_custom_definitions.path",
             title = assets.TRANSLATIONS,
@@ -39,7 +39,7 @@ def create_default_custom_definitions():
             initialization =
                 "value = reversed(list(publishable.ascend_tree(True)))"
         ),
-        assets.new(
+        assets.require(
             CustomDefinition,
             "default_custom_definitions.publishable",
             title = assets.TRANSLATIONS,
@@ -47,7 +47,7 @@ def create_default_custom_definitions():
             initialization =
                 "value = publishable"
         ),
-        assets.new(
+        assets.require(
             CustomDefinition,
             "default_custom_definitions.type",
             title = assets.TRANSLATIONS,
@@ -60,7 +60,7 @@ def create_default_custom_definitions():
                 "   if cls is not Publishable and issubclass(cls, Publishable)\n"
                 "]"
         ),
-        assets.new(
+        assets.require(
             CustomDefinition,
             "default_custom_definitions.target",
             title = assets.TRANSLATIONS,
