@@ -84,4 +84,5 @@ class CustomDefinition(Item):
 
 # For backwards compatibility
 GoogleAnalyticsCustomDefinition = CustomDefinition
+GoogleAnalyticsCustomDefinitionTranslation = CustomDefinitionTranslation
 
